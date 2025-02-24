@@ -1,0 +1,36 @@
+{
+    "birth": {
+        "date": "1984-06-12",
+        "shorttext": "Birth in Paris",
+        "longtext": "I was born in Paris (11th arondissement) to Daniel and Rose-Marie Rigot, with 2 bigger sisters Mélina and Adeline."
+    },
+    "phases": {
+        "childhood": {
+            "start-date": "",
+            "color": "lightblue"
+        }
+    },
+    "categories": {
+        "Family" : {
+            "symbol": "👨‍🍼",
+            "events": {
+                "2012-06-09": {
+                    "shorttext": "Marries Vanessa",
+                    "longtext": "I married Vanessa Paquerot on 6/9, in Montgobert, Picardie, because it was the cheapest genuine little castle we could rent that you could get to from Paris by train."
+                }
+            }
+        },
+        "Work": {
+            "symbol": "👨‍💻",
+            "events": []
+        },
+        "Location": {
+            "symbol": "🌎",
+            "events": []
+        },
+        "Misc" : {
+            "symbol": "🤷‍♂️",
+            "events": []
+        }
+    }
+}
