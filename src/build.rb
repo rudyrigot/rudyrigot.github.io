@@ -1,6 +1,16 @@
 require 'json'
 require 'date'
 
+# Accepts either a string or a date
+def format_date(date, long = false)
+    date = Date.parse(date) if date.is_a?(String)
+    if long
+        date.strftime('%B %d %Y')
+    else
+        date.strftime('%b %d %Y')
+    end
+end
+
 html = File.read('src/index.html')
 html_my_weeks = StringIO.new
 
@@ -32,11 +42,11 @@ week_start_date = Date.parse(json['birth']['date'])
 while week_start_date <= last_date
     week_end_date = week_start_date + 6
 
-    week_name = "From #{week_start_date.strftime('%m/%d/%Y')} to #{week_end_date.strftime('%m/%d/%Y')}"
+    week_name = "From #{format_date(week_start_date)} to #{format_date(week_end_date)}"
 
     if week_start_date == Date.parse(json['birth']['date']) # Birth!
         shorttext = "#{json['birth']['symbol']} #{json['birth']['shorttext']}"
-        longtext = "#{week_name} <div class=\"description\">#{json['birth']['longtext']}</div>"
+        longtext = "#{format_date(json['birth']['date'], true)} <div class=\"description\">#{json['birth']['longtext']}</div>"
     else
         shorttext = '&nbsp;'
         longtext = week_name
