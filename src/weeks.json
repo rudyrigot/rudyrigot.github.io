@@ -2,7 +2,8 @@
     "birth": {
         "date": "1984-06-12",
         "shorttext": "Birth in Paris",
-        "longtext": "I was born in Paris (11th arondissement) to Daniel and Rose-Marie Rigot, with 2 bigger sisters Mélina and Adeline."
+        "longtext": "I was born in Paris (11th arondissement) to Daniel and Rose-Marie Rigot, with 2 bigger sisters Mélina and Adeline.",
+        "symbol": "👶"
     },
     "phases": {
         "childhood": {

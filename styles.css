@@ -16,7 +16,7 @@
 .week .shorttext {
     border: 1px solid #333333;
     border-radius: 5px;
-    padding: 0 15px;
+    padding: 2px 15px;
     margin: 8px;
 }
 
@@ -35,6 +35,10 @@
     transform: translate(-50%, -50%);
     text-align: center;
     transition: visibility 0s 0.2s, opacity 0.2s linear;
+}
+
+.week .longtext .description {
+    font-style: italic;
 }
 
 .week:hover .longtext {

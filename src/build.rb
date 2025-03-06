@@ -32,8 +32,15 @@ week_start_date = Date.parse(json['birth']['date'])
 while week_start_date <= last_date
     week_end_date = week_start_date + 6
 
-    shorttext = '&nbsp;'
-    longtext = "From #{week_start_date.strftime('%m/%d/%Y')} to #{week_end_date.strftime('%m/%d/%Y')}"
+    week_name = "From #{week_start_date.strftime('%m/%d/%Y')} to #{week_end_date.strftime('%m/%d/%Y')}"
+
+    if week_start_date == Date.parse(json['birth']['date']) # Birth!
+        shorttext = "#{json['birth']['symbol']} #{json['birth']['shorttext']}"
+        longtext = "#{week_name} <div class=\"description\">#{json['birth']['longtext']}</div>"
+    else
+        shorttext = '&nbsp;'
+        longtext = week_name
+    end
 
     html_my_weeks << %{
         <div class="week">
