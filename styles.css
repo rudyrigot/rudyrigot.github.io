@@ -1,6 +1,13 @@
+#weeks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
 .week {
-    display: inline-block;
     border: 1px solid #333333;
     padding: 0 10px;
-    margin: 10px;
+    border-radius: 5px;
 }

@@ -32,12 +32,12 @@ week_start_date = Date.parse(json['birth']['date'])
 while week_start_date <= last_date
     week_end_date = week_start_date + 6
 
-    html_my_weeks << '<span class="week">'
+    html_my_weeks << '<div class="week">'
     html_my_weeks << 'From '
     html_my_weeks << week_start_date
     html_my_weeks << ' to '
     html_my_weeks << week_end_date
-    html_my_weeks << '</span>'
+    html_my_weeks << '</div>'
 
     week_start_date += 7
 end
