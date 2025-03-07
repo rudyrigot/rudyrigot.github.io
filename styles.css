@@ -7,17 +7,13 @@
     max-width: 800px;
 }
 
-/* @media (min-width: 1250px) {
-    #weeks {
-        margin: 10px 100px;
-    }
-} */
-
 .week .shorttext {
     border: 1px solid #333333;
     border-radius: 5px;
     padding: 2px 15px;
     margin: 8px;
+    cursor: default;
+    box-shadow: 2px 3px 3px #888888;
 }
 
 .week .longtext {
@@ -39,6 +35,10 @@
 
 .week .longtext .description {
     font-style: italic;
+}
+
+.week:hover .shorttext {
+    box-shadow: 1px 2px 2px #888888;
 }
 
 .week:hover .longtext {
