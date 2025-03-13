@@ -31,13 +31,13 @@ json['categories'].each do | category_name, category_content |
         }
     end
 end
+last_date = events.keys.max
 
 # Insert birthdays
 birth_date = Date.parse(json['birth']['date'])
 current_birthday = birth_date.next_year
-today = Date.today
 age = 1
-while current_birthday <= today
+while current_birthday <= last_date
     events[current_birthday] = {
         category_symbol: '🎂',
         shorttext: "Turned #{age}",
@@ -49,7 +49,6 @@ end
 
 # Now let's iterate through time to build all the weeks one by one
 week_start_date = Date.parse(json['birth']['date'])
-last_date = events.keys.max
 while week_start_date <= last_date
     week_end_date = week_start_date + 6
 
