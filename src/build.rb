@@ -32,6 +32,21 @@ json['categories'].each do | category_name, category_content |
     end
 end
 
+# Insert birthdays
+birth_date = Date.parse(json['birth']['date'])
+current_birthday = birth_date.next_year
+today = Date.today
+age = 1
+while current_birthday <= today
+    events[current_birthday] = {
+        category_symbol: '🎂',
+        shorttext: "Turned #{age}",
+        longtext: 'Happy birthday to me!'
+    }
+    current_birthday = current_birthday.next_year
+    age += 1
+end
+
 # Now let's iterate through time to build all the weeks one by one
 week_start_date = Date.parse(json['birth']['date'])
 last_date = events.keys.max
@@ -39,13 +54,13 @@ while week_start_date <= last_date
     week_end_date = week_start_date + 6
 
     # Find if there is an event to represent that week
-    event_dates_of_the_week = events.keys.select { |date| date >= week_start_date && date < week_end_date }
+    event_dates_of_the_week = events.keys.select { |date| date >= week_start_date && date <= week_end_date }
     if event_dates_of_the_week.size > 1
         raise "Oh noes, 2 events in the same week, can't do that! #{events_of_the_week}"
     end
 
     # Prepare fields to be templated
-    if week_start_date == Date.parse(json['birth']['date']) # Birth!
+    if week_start_date == birth_date # Birth!
         shorttext = "#{json['birth']['symbol']} #{json['birth']['shorttext']}"
         longtext = "#{format_date(json['birth']['date'], true)} <div class=\"description\">#{json['birth']['longtext']}</div>"
     elsif event_dates_of_the_week.size > 0
