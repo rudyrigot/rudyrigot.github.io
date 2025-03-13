@@ -63,7 +63,7 @@ while week_start_date <= last_date
     end
 
     html_my_weeks << %{
-        <div class="week">
+        <div class="week" data-last-day="#{week_end_date.strftime('%Y-%m-%d')}">
             <div class="shorttext">
                 #{shorttext}
             </div>
