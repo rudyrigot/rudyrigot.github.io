@@ -16,8 +16,8 @@ html_my_weeks = StringIO.new
 
 json = JSON.parse(File.read('src/weeks.json'))
 
+# Reorganize the data in the JSON file so it's easiest to template: hash whose key is the date, and all displayed data are values
 events = {}
-
 json['categories'].each do | category_name, category_content |
     category_symbol = category_content['symbol']
     category_content['events'].each do | date, texts |
@@ -32,23 +32,19 @@ json['categories'].each do | category_name, category_content |
     end
 end
 
-puts JSON.pretty_generate(events)
-
-last_date = events.keys.max
-puts "Last date: #{last_date}"
-
+# Now let's iterate through time to build all the weeks one by one
 week_start_date = Date.parse(json['birth']['date'])
-
+last_date = events.keys.max
 while week_start_date <= last_date
     week_end_date = week_start_date + 6
 
-    week_name = "From #{format_date(week_start_date)} to #{format_date(week_end_date)}"
-
+    # Find if there is an event to represent that week
     event_dates_of_the_week = events.keys.select { |date| date >= week_start_date && date < week_end_date }
     if event_dates_of_the_week.size > 1
         raise "Oh noes, 2 events in the same week, can't do that! #{events_of_the_week}"
     end
 
+    # Prepare fields to be templated
     if week_start_date == Date.parse(json['birth']['date']) # Birth!
         shorttext = "#{json['birth']['symbol']} #{json['birth']['shorttext']}"
         longtext = "#{format_date(json['birth']['date'], true)} <div class=\"description\">#{json['birth']['longtext']}</div>"
@@ -59,9 +55,10 @@ while week_start_date <= last_date
         longtext = "#{format_date(event_date)} <div class=\"description\">#{event[:longtext]}</div>"
     else
         shorttext = '&nbsp;'
-        longtext = week_name
+        longtext = "From #{format_date(week_start_date)} to #{format_date(week_end_date)}"
     end
 
+    # Templating
     html_my_weeks << %{
         <div class="week" data-last-day="#{week_end_date.strftime('%Y-%m-%d')}">
             <div class="shorttext">
@@ -76,4 +73,7 @@ while week_start_date <= last_date
     week_start_date += 7
 end
 
+# Now insert the fragment where it should be
 File.write('index.html', html.gsub('{{my_weeks}}', html_my_weeks.string))
+
+puts 'Done.'
