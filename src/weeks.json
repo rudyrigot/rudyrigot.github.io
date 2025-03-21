@@ -97,7 +97,7 @@
             }
         },
         "Location": {
-            "symbol": "🌎",
+            "symbol": "🏠",
             "events": {
                 "1988-08-16": {
                     "shorttext": "Moved to Saint-Étienne",
@@ -150,15 +150,18 @@
             "events": {
                 "2013-05-15": {
                     "shorttext": "1st book",
-                    "longtext": "Published by Eyrolles, about web project management in the case of responsive web design websites."
+                    "longtext": "Published by Eyrolles, about web project management in the case of responsive web design websites.",
+                    "symbol": "📖"
                 },
                 "2018-01-02": {
                     "shorttext": "2nd book",
-                    "longtext": "Published by D-BookeR, about the Go programming language, specifically when to use it and not use it."
+                    "longtext": "Published by D-BookeR, about the Go programming language, specifically when to use it and not use it.",
+                    "symbol": "📖"
                 },
                 "2020-12-22": {
                     "shorttext": "Became American",
-                    "longtext": "In the middle of a pandemic, not much of a grandiose ceremony, but still a big deal."
+                    "longtext": "In the middle of a pandemic, not much of a grandiose ceremony, but still a big deal.",
+                    "symbol": "🇺🇸"
                 }
             }
         }

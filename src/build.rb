@@ -19,15 +19,12 @@ json = JSON.parse(File.read('src/weeks.json'))
 # Reorganize the data in the JSON file so it's easiest to template: hash whose key is the date, and all displayed data are values
 events = {}
 json['categories'].each do | category_name, category_content |
-    category_symbol = category_content['symbol']
-    category_content['events'].each do | date, texts |
-        shorttext = texts['shorttext']
-        longtext = texts['longtext']
+    category_content['events'].each do | date, event_map |
         raise "The date #{date} is appearing twice, can't do that." if events.key?(Date.parse(date))
         events[Date.parse(date)] = {
-            category_symbol: category_symbol,
-            shorttext: shorttext,
-            longtext: longtext
+            category_symbol: event_map['symbol'] || category_content['symbol'],
+            shorttext: event_map['shorttext'],
+            longtext: event_map['longtext']
         }
     end
 end
