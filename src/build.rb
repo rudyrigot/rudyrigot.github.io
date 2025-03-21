@@ -56,7 +56,7 @@ while week_start_date <= last_date
     # Find if there is an event to represent that week
     event_dates_of_the_week = events.keys.select { |date| date >= week_start_date && date <= week_end_date }
     if event_dates_of_the_week.size > 1
-        raise "Oh noes, 2 events in the same week, can't do that! #{events_of_the_week}"
+        raise "Oh noes, 2 events in the same week, can't do that! #{event_dates_of_the_week}"
     end
 
     # Prepare fields to be templated
