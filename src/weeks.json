@@ -2,38 +2,133 @@
     "birth": {
         "date": "1984-06-12",
         "shorttext": "Birth in Paris",
-        "longtext": "I was born in Paris (11th arondissement) to Daniel and Rose-Marie Rigot, with 2 bigger sisters Mélina and Adeline.",
+        "longtext": "I was born in Paris (11th arondissement) to Daniel and Rose-Marie Rigot, with 2 older sisters Mélina and Adeline.",
         "symbol": "👶"
     },
     "categories": {
         "Family" : {
             "symbol": "👨‍🍼",
             "events": {
+                "2001-07-01" : {
+                    "shorttext": "Natân born",
+                    "longtext": "Little brother from another mother."
+                },
                 "2012-06-09": {
-                    "shorttext": "Marries Vanessa",
+                    "shorttext": "Married Vanessa",
                     "longtext": "I married Vanessa Paquerot on 6/9, in Montgobert, Picardie, because it was the cheapest genuine little castle we could rent that you could get to from Paris by train."
+                },
+                "2013-03-08": {
+                    "shorttext": "Dad died",
+                    "longtext": "In Créteil, after a year of suffering and false hopes."
                 },
                 "2014-09-20": {
                     "shorttext": "Lila born",
-                    "longtext": "TODO"
+                    "longtext": "Right back home from work on a Friday night, we rushed to California Pacific Medical Center, where she was born the next morning."
                 },
                 "2023-04-26": {
                     "shorttext": "Ava born",
-                    "longtext": "TODO"
+                    "longtext": "Showed up at 4am at Elmhurst Memorial for an induction, but had to wait all day because too many ladies showed up unexpectedly! She was born that evening, though."
                 }
             }
         },
-        "Work": {
+        "School and Work": {
             "symbol": "👨‍💻",
-            "events": []
+            "events": {
+                "1992-09-01": {
+                    "shorttext": "Started middle school",
+                    "longtext": "In Notre-Dame de Valbenoite, in Saint-Étienne. Participate in a bunch of musical theater."
+                },
+                "1998-09-01": {
+                    "shorttext": "Started high school",
+                    "longtext": "In Notre-Dame de Valbenoite Le Rond-Point, in Saint-Étienne. Long walk every day."
+                },
+                "2001-09-01": {
+                    "shorttext": "Started college",
+                    "longtext": "First year of undergraduate studies in Maths & Computer Science, at Université Jean Monnet in Saint-Étienne."
+                },
+                "2002-07-02": {
+                    "shorttext": "Joined Hôtel Ténor",
+                    "longtext": "First job, two-star business hotel that kept me funded through my Saint-Étienne college years. I was the reception manager after a few months."
+                },
+                "2007-09-24": {
+                    "shorttext": "Joined SQLI",
+                    "longtext": "Consulting about various things, mostly helping the French government maintain their argricultural database (for real)."
+                },
+                "2008-01-01": {
+                    "shorttext": "Joined Clever Age",
+                    "longtext": "As a web dev, then project manager, then head of internal tools, then working on international expansion."
+                },
+                "2012-10-01": {
+                    "shorttext": "Joined Steerious",
+                    "longtext": "Still doing other things at Clever Age, this was a Clever Age product, which I was leading."
+                },
+                "2013-05-01": {
+                    "shorttext": "Joined prismic.io",
+                    "longtext": "CMS in the cloud. Was a dev evangelist."
+                },
+                "2014-07-14": {
+                    "shorttext": "Joined Apple",
+                    "longtext": "Engineer on localization tools. Worked on a number of things, including the very first Apple Watch."
+                },
+                "2015-07-15": {
+                    "shorttext": "Co-founded Holberton",
+                    "longtext": "Software engineering school, later grew to dozens of campuses worldwide (but I was gone already)."
+                },
+                "2016-05-01": {
+                    "shorttext": "Joined Salesforce",
+                    "longtext": "Engineer on in-app user assistance experiences in Salesforce Lightning. I built the walkthrough player that is still in Salesforce now (I think)."
+                },
+                "2017-12-28": {
+                    "shorttext": "Joined Kenna Security",
+                    "longtext": "Engineering Manager in a data analytics company about cybersecurity data. Later got acquired by Cisco."
+                },
+                "2019-11-01": {
+                    "shorttext": "Joined Salesforce (again)",
+                    "longtext": "Engineer on some customer-facing features, first in Essentials Cloud and then in Slack for Sales Cloud."
+                },
+                "2022-04-08": {
+                    "shorttext": "Moved to dev experience",
+                    "longtext": "Still at Salesforce, but working on dev tooling, most focused on SCM, and somewhat on CI."
+                }
+            }
         },
         "Location": {
             "symbol": "🌎",
-            "events": []
+            "events": {
+                "1988-08-16": {
+                    "shorttext": "Moved to Saint-Étienne",
+                    "longtext": "Parent separating, going back to mother's hometown."
+                },
+                "2006-08-24": {
+                    "shorttext": "Moved to Maryville, MO",
+                    "longtext": "Two whole semesters as an exchange student in Northwest Missouri State. Go Bearcats."
+                },
+                "2007-05-11": {
+                    "shorttext": "Moved back to Saint-Étienne",
+                    "longtext": "Temporarily while I'm interviewing all over France for my first job in tech."
+                },
+                "2007-07-10": {
+                    "shorttext": "Moved to Paris",
+                    "longtext": "First tech job found, I spent over a month seeking a room in the saturated Parisian rental market."
+                }
+            }
         },
         "Misc" : {
             "symbol": "🤷‍♂️",
-            "events": []
+            "events": {
+                "2013-05-15": {
+                    "shorttext": "1st book",
+                    "longtext": "Published by Eyrolles, about web project management in the case of responsive web design websites."
+                },
+                "2018-01-02": {
+                    "shorttext": "2nd book",
+                    "longtext": "Published by D-BookeR, about the Go programming language, specifically when to use it and not use it."
+                },
+                "2020-12-22": {
+                    "shorttext": "Became American",
+                    "longtext": "In the middle of a pandemic, not much of a grandiose ceremony, but still a big deal."
+                }
+            }
         }
     }
 }
