@@ -1,3 +1,15 @@
+body {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+}
+
+h1 {
+    font-family: "DM Serif Display", serif;
+    font-style: normal;
+}
+
 #intro {
     margin: 60px auto;
     max-width: 780px;
