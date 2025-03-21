@@ -5,12 +5,6 @@
         "longtext": "I was born in Paris (11th arondissement) to Daniel and Rose-Marie Rigot, with 2 bigger sisters Mélina and Adeline.",
         "symbol": "👶"
     },
-    "phases": {
-        "childhood": {
-            "start-date": "",
-            "color": "lightblue"
-        }
-    },
     "categories": {
         "Family" : {
             "symbol": "👨‍🍼",

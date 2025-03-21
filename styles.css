@@ -51,3 +51,7 @@
     opacity: 1;
     transition: opacity 0.2s linear;
 }
+
+.birthday .shorttext {
+    background-color: #eeeef5;
+}

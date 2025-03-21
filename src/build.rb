@@ -41,7 +41,8 @@ while current_birthday <= last_date
     events[current_birthday] = {
         category_symbol: '🎂',
         shorttext: "Turned #{age}",
-        longtext: 'Happy birthday to me!'
+        longtext: 'Happy birthday to me!',
+        css_class: 'birthday'
     }
     current_birthday = current_birthday.next_year
     age += 1
@@ -62,19 +63,22 @@ while week_start_date <= last_date
     if week_start_date == birth_date # Birth!
         shorttext = "#{json['birth']['symbol']} #{json['birth']['shorttext']}"
         longtext = "#{format_date(json['birth']['date'], true)} <div class=\"description\">#{json['birth']['longtext']}</div>"
+        css_class = 'birthday'
     elsif event_dates_of_the_week.size > 0
         event_date = event_dates_of_the_week[0]
         event = events[event_date]
         shorttext = "#{event[:category_symbol]} #{event[:shorttext]}"
         longtext = "#{format_date(event_date)} <div class=\"description\">#{event[:longtext]}</div>"
+        css_class = event[:css_class] || ''
     else
         shorttext = '&nbsp;'
         longtext = "From #{format_date(week_start_date)} to #{format_date(week_end_date)}"
+        css_class = ''
     end
 
     # Templating
     html_my_weeks << %{
-        <div class="week" data-last-day="#{week_end_date.strftime('%Y-%m-%d')}">
+        <div class="week #{css_class}" data-last-day="#{week_end_date.strftime('%Y-%m-%d')}">
             <div class="shorttext">
                 #{shorttext}
             </div>
