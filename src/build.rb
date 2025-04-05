@@ -89,6 +89,6 @@ while week_start_date <= last_date
 end
 
 # Now insert the fragment where it should be
-File.write('index.html', html.gsub('{{my_weeks}}', html_my_weeks.string))
+File.write('index.html', html.gsub('{{my_weeks}}', html_my_weeks.string).gsub('{{birth_date}}', birth_date.strftime('%Y-%m-%d')))
 
 puts 'Done.'
