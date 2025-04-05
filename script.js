@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(today);
 
     const weeksElement = document.getElementById('weeks');
+    const birthDate = weeksElement.dataset.birthDate;
+    const birthDateMoment = moment(birthDate, 'YYYY-MM-DD');
     const lastDayString = weeksElement.lastElementChild.dataset.lastDay;
     let lastDayOfPreviousWeek = moment(lastDayString, 'YYYY-MM-DD');
     console.log(lastDayOfPreviousWeek);
@@ -19,16 +21,35 @@ document.addEventListener("DOMContentLoaded", function() {
     while (lastDayOfCurrentWeek < today) {
         console.log(firstDayOfCurrentWeek);
 
-        const weekElementAsString = `
-            <div class="week" data-last-day="${lastDayOfCurrentWeek.format('YYYY-MM-DD')}">
-                <div class="shorttext">
-                    &nbsp;
+        // Check if this week contains a birthday
+        const isBirthdayWeek = firstDayOfCurrentWeek.format('MM-DD') <= birthDateMoment.format('MM-DD') && 
+                              lastDayOfCurrentWeek.format('MM-DD') >= birthDateMoment.format('MM-DD');
+        
+        let weekElementAsString;
+        if (isBirthdayWeek) {
+            const age = firstDayOfCurrentWeek.year() - birthDateMoment.year();
+            weekElementAsString = `
+                <div class="week birthday" data-last-day="${lastDayOfCurrentWeek.format('YYYY-MM-DD')}">
+                    <div class="shorttext">
+                        🎂 Turned ${age}
+                    </div>
+                    <div class="longtext">
+                        ${birthDateMoment.format('MMM DD YYYY')} <div class="description">Happy birthday to me!</div>
+                    </div>
                 </div>
-                <div class="longtext">
-                    From ${firstDayOfCurrentWeek.format('MMM DD YYYY')} to ${lastDayOfCurrentWeek.format('MMM DD YYYY')}
+            `;
+        } else {
+            weekElementAsString = `
+                <div class="week" data-last-day="${lastDayOfCurrentWeek.format('YYYY-MM-DD')}">
+                    <div class="shorttext">
+                        &nbsp;
+                    </div>
+                    <div class="longtext">
+                        From ${firstDayOfCurrentWeek.format('MMM DD YYYY')} to ${lastDayOfCurrentWeek.format('MMM DD YYYY')}
+                    </div>
                 </div>
-            </div>
-        `;
+            `;
+        }
         const weekElement = parser.parseFromString(weekElementAsString, "text/html").body.firstChild;
         weeksElement.append(weekElement);
 
